@@ -11,7 +11,6 @@ class Calendar extends StatefulWidget {
   final ValueChanged<DateTime> onDateSelected;
   final ValueChanged<Tuple2<DateTime, DateTime>> onSelectedRangeChange;
   final bool isExpandable;
-  final bool isExpanded;
   final DayBuilder dayBuilder;
   final bool showChevronsToChangeRange;
   final bool showTodayAction;
@@ -22,7 +21,6 @@ class Calendar extends StatefulWidget {
       {this.onDateSelected,
       this.onSelectedRangeChange,
       this.isExpandable: false,
-      this.isExpanded: false,
       this.dayBuilder,
       this.showTodayAction: true,
       this.showChevronsToChangeRange: true,
@@ -39,7 +37,7 @@ class _CalendarState extends State<Calendar> {
   Iterable<DateTime> selectedWeeksDays;
   DateTime _selectedDate = new DateTime.now();
   String currentMonth;
-  bool isExpanded = widget.isExpanded;
+  bool isExpanded = true;
   String displayMonth;
   DateTime get selectedDate => _selectedDate;
 
